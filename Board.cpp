@@ -9,16 +9,15 @@ using namespace std;
 
 namespace ariel {
             Board::Board(){
-                int minV = RESET_VALUE; 
-                int minH = RESET_VALUE;
-                int maxV = RESET_VALUE;
-                int maxH = RESET_VALUE;
-                vector<vector<char>> b;
+                this->minV = RESET_VALUE; 
+                this->minH = RESET_VALUE;
+                this->maxV = RESET_VALUE;
+                this->maxH = RESET_VALUE;
             }
-            void Board::post (int row, int col, Direction direction, string data){
+            void Board::post (unsigned introw, unsigned intcol, Direction direction, string data){
                 cout <<"POST"<< endl;
             }
-            string Board::read (int row, int col, Direction direction, int length){
+            string Board::read (unsigned int row, unsigned int col, Direction direction, int length){
                 return "READ";
             }
             void Board::show(){
