@@ -2,22 +2,25 @@
 #define BOARD_H
 
 #include <string>
-#include <vector>
+#include <map>
 #include "Direction.hpp"
 using namespace std;
+
 namespace ariel{
-    
     class Board {
         private:
-            int minV;
-            int minH;
-            int maxV;
-            int maxH;
-            vector<vector<char>> b;
+            map<unsigned int,map<unsigned int, char>> b;
+            unsigned int minV;
+            unsigned int minH;
+            unsigned int maxV;
+            unsigned int maxH;
+
+            void updateLimitsH(unsigned int r, unsigned int c, unsigned int l);
+            void updateLimitsV(unsigned int r, unsigned int c, unsigned int l);
         public:
             Board();
             void post (unsigned int row, unsigned int col, Direction direction, string data);
-            string read (unsigned int row, unsigned int col, Direction direction, int length);
+            string read (unsigned int row, unsigned int col, Direction direction, unsigned int length);
             void show();
     };
 }
